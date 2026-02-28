@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AR Viewer — Моя 3D Модель</title>
+
+  <!-- Подключаем Google Model Viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    h2 {
+      margin-top: 10px;
+      font-size: 1.5em;
+      text-align: center;
+      color: #333;
+    }
+
+    model-viewer {
+      width: 100%;
+      max-width: 900px;
+      height: 80vh;
+      background: transparent;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      margin-top: 12px;
+      border-radius: 10px;
+      background: #1976d2;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #125ea9;
+    }
+
+    .hint {
+      font-size: 13px;
+      color: #666;
+      margin-top: 6px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>AR-просмотр 3D модели</h2>
+
+  <!-- 🔹 Важно: здесь замени "sexy_girl" на имя своего файла -->
+  <model-viewer
+    src="sexy_girl"
+    alt="3D модель"
+    ar
+    ar-modes="scene-viewer quick-look"
+    camera-controls
+    exposure="1"
+    shadow-intensity="1"
+    shadow-softness="0.9"
+    environment-image="neutral"
+    background-color="transparent"
+    interaction-prompt="auto"
+    style="--poster-color: transparent;">
+  </model-viewer>
+
+  <a class="btn" href="sexy_girl" download>Скачать модель</a>
+  <p class="hint">📱 Открой в Chrome на Android и нажми «Посмотреть в AR»</p>
+
+</body>
+</html>
